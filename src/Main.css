@@ -226,3 +226,210 @@
 .wrapper_card h3:last-child {
     color: #FF5C00;
 }
+
+.login {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    padding: 60px 0 60px 60px;
+    background-image: url("../public/img/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login_card {
+    width: 470px;
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+    padding: 50px 30px 50px 30px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0px 24px 64px -16px rgba(25, 25, 28, 0.08);
+}
+
+.login_card form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.login_card_icon {
+    text-align: center;
+}
+
+.login_title {
+    text-align: center;
+}
+
+.login_title h1 {
+    color: #19191C;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.login_title p {
+    color: #828487;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.login_inputs label {
+    color: #828487;
+    font-size: 12px;
+}
+
+.login_input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 58px;
+    padding: 12px 16px;
+    border: 1px solid #E4E4E4;
+}
+
+.login_input input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.forgot a {
+    color: #FF5C00;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login_card button {
+    padding: 12px;
+    border-radius: 58px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    background: #FF5C00;
+}
+
+.endUser {
+    color: #828487;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.main_home {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-image: url('../public/img/BackgroundMain.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.admin_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.admin_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.admin_card figure {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.admin_card:hover img {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.admin_card:hover p {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.admin_card img {
+    width: 100%;
+    opacity: 0.64;
+    transition: .3s ease-in-out;
+}
+
+.admin_card p {
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    opacity: 0.64;
+    transition: .3s ease-in-out;
+}
+
+.main_btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.top button {
+    width: 172px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px;
+    border: none;
+    border-radius: 58px;
+    background: #FF5C00;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.top button:last-child {
+    color: rgba(255, 92, 0, 1);
+    background-color: rgba(255, 245, 238, 1);
+}
+
+.main_btns a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 58px;
+    color: #FF5C00;
+    border: 1px solid #FF5C00;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    user-select: none;
+}

@@ -8,7 +8,7 @@ function Navbar(props) {
     return (
         <div className='navbar'>
             <div className="nav_left">
-                <span id="back"><NavLink><BiArrowBack /></NavLink></span>
+                <span id="back"><NavLink to={'/home'}><BiArrowBack /></NavLink></span>
 
                 <div className="logo">
                     <NavLink to={"/"}>

@@ -21,14 +21,14 @@ function ContextFunction({ children }) {
             img: '../../img/lasagna.png',
             title: 'Shirinlik & desert',
         },
-        {
-            img: '../../img/misc.png',
-            title: 'Shashlik',
-        },
-        {
-            img: '../../img/misc.png',
-            title: 'Choyxona',
-        },
+        // {
+        //     img: '../../img/misc.png',
+        //     title: 'Shashlik',
+        // },
+        // {
+        //     img: '../../img/misc.png',
+        //     title: 'Choyxona',
+        // },
         {
             img: '../../img/misc.png',
             title: 'Salatlar',
@@ -37,7 +37,7 @@ function ContextFunction({ children }) {
             img: '../../img/misc.png',
             title: 'Yana nimadir',
         },
-    ])
+    ]);
 
     // All information data
     const [allInfo, setAllInfo] = useState([
@@ -121,12 +121,47 @@ function ContextFunction({ children }) {
             title: 'Mie kuah pedas',
             price: '11.21',
         },
-    ])
+    ]);
+
+    // Admins informations
+    const [admin, setAdmin] = useState([
+        {
+            name: 'Beby Jovancy',
+            img: '../../img/Oval.png',
+        },
+        {
+            name: 'Aisyah Zidni',
+            img: '../../img/Oval1.png',
+        },
+        {
+            name: 'Nirmala Azalea',
+            img: '../../img/Oval2.png',
+        },
+        {
+            name: 'Bena Kane',
+            img: '../../img/Oval3.png',
+        },
+        {
+            name: 'Firmino Kudo',
+            img: '../../img/Oval4.png',
+        },
+    ]);
+
+    // Search state
+    const [search, setSearch] = useState('');
+
+    // Search fundtion
+    function searchFunction(e) {
+        setSearch(e.target.value)
+    };
 
     return (
         <ContextData.Provider value={{
             sidebar,
             allInfo,
+            search,
+            searchFunction,
+            admin,
         }}>
             {children}
         </ContextData.Provider>
