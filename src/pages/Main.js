@@ -3,7 +3,7 @@ import { ContextData } from '../context/Context';
 import { NavLink } from 'react-router-dom';
 
 function Main() {
-    const { admin } = useContext(ContextData);
+    const { admin, clockIn, clockOut } = useContext(ContextData);
 
     return (
         <div className='main_home'>
@@ -19,8 +19,8 @@ function Main() {
             </div>
             <div className="main_btns">
                 <div className="top">
-                    <button>Clock in</button>
-                    <button>Clock out</button>
+                    <button onClick={() => clockIn('/clockin')}>Clock in</button>
+                    <button onClick={() => clockIn('/clockout')}>Clock out</button>
                 </div>
                 <NavLink to={'/login'}>Login</NavLink>
             </div>

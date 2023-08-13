@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import { PiNoteLight, PiNotepadLight } from "react-icons/pi";
 import { GoHome } from "react-icons/go";
+import { ContextData } from '../context/Context';
 
-function Navbar(props) {
+function Navbar() {
+    const { clock } = useContext(ContextData);
+
     return (
         <div className='navbar'>
             <div className="nav_left">
@@ -35,7 +38,22 @@ function Navbar(props) {
                 </ul>
 
                 <ul>
-                    <li>10:53:00  26/02/2023</li>
+                    {
+                        clock.map((a, b) => (
+                            <li key={b} className='nav_date'>
+                                <span>{a.hour < 10 ? "0" + a.hour : a.hour}</span>
+                                <span>:</span>
+                                <span>{a.minute < 10 ? "0" + a.minute : a.minute}</span>
+                                <span>:</span>
+                                <span>{a.seconds < 10 ? "0" + a.seconds : a.seconds}</span>
+                                <span>{a.date < 10 ? "0" + a.date : a.date}</span>
+                                <span>/</span>
+                                <span>{a.month < 10 ? "0" + (+a.month + 1) : a.month}</span>
+                                <span>/</span>
+                                <span>{a.year}</span>
+                            </li>
+                        ))
+                    }
                     <li>
                         <figure><img src="../../img/Profile.png" alt="profile" /></figure>
                     </li>

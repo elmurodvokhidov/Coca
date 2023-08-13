@@ -4,6 +4,8 @@ import Navbar from './utils/Navbar';
 import Home from './pages/Home';
 import Main from './pages/Main';
 import Login from './pages/Login';
+import ClockIn from './pages/ClockIn';
+import ClockOut from './pages/ClockOut';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Main />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/clockin' element={<ClockIn />} />
+          <Route path='/clockout' element={<ClockOut />} />
         </Routes>
       }
     </div>

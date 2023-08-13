@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ContextData = React.createContext();
 
@@ -150,10 +151,68 @@ function ContextFunction({ children }) {
     // Search state
     const [search, setSearch] = useState('');
 
-    // Search fundtion
+    // Navigate to ClockIn & ClockOut
+    const clockIn = useNavigate();
+    const clockOut = useNavigate();
+
+    // Clock state
+    const [clock, setClock] = useState([]);
+
+    // Weekdays
+    const [weekdays, setWeekdays] = useState([
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+    ]);
+
+    // Month name
+    const [monthName, setMonthName] = useState([
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Nov",
+        "Dec"
+    ]);
+
+    // Session
+    const [session, setSession] = useState();
+
+
+    // Search function
     function searchFunction(e) {
         setSearch(e.target.value)
     };
+
+    // Clock function
+    function clockFunc() {
+        setClock([{
+            hour: `${new Date().getHours() - 12}`,
+            minute: `${new Date().getMinutes()}`,
+            seconds: `${new Date().getSeconds()}`,
+            date: `${new Date().getDate()}`,
+            month: `${new Date().getMonth()}`,
+            year: `${new Date().getFullYear()}`,
+            day: `${new Date().getDay()}`,
+        }]);
+
+        setSession(new Date().getHours() > 12 ? "PM" : "AM");
+    };
+
+    useEffect(() => {
+        setInterval(() => {
+            clockFunc();
+        }, 1000);
+    }, []);
 
     return (
         <ContextData.Provider value={{
@@ -162,6 +221,13 @@ function ContextFunction({ children }) {
             search,
             searchFunction,
             admin,
+            clockIn,
+            clockOut,
+            clock,
+            clockFunc,
+            weekdays,
+            monthName,
+            session,
         }}>
             {children}
         </ContextData.Provider>

@@ -100,6 +100,10 @@
     width: 100%;
 }
 
+.nav_date span:nth-child(6) {
+    margin-left: 10px;
+}
+
 #back {
     padding: 5px 20px;
     border-right: 1px solid #E4E4E4;
@@ -392,14 +396,14 @@
     gap: 16px;
 }
 
-.top {
+.main_btns .top {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
 
-.top button {
+.main_btns .top button {
     width: 172px;
     height: 42px;
     display: flex;
@@ -416,7 +420,7 @@
     font-weight: 600;
 }
 
-.top button:last-child {
+.main_btns .top button:last-child {
     color: rgba(255, 92, 0, 1);
     background-color: rgba(255, 245, 238, 1);
 }
@@ -432,4 +436,89 @@
     backdrop-filter: blur(10px);
     text-decoration: none;
     user-select: none;
+}
+
+.clockIn {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 200px;
+    padding: 0 0 65px 0;
+    background-image: url('../public/img/BackgroundMain.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clock_wrapper {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.clock_wrapper .top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+}
+
+.clock_wrapper .hour {
+    font-size: 160px;
+    line-height: 100%;
+}
+
+.clock_wrapper .session {
+    font-size: 44px;
+    /* line-height: 100%; */
+}
+
+.clock_wrapper .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 24px;
+    line-height: 150%;
+}
+
+.clockIn_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.clockIn_footer figure {
+    width: 80px;
+    height: 80px;
+}
+
+.clockIn_footer figure img {
+    width: 100%;
+}
+
+.clockIn_title {
+    color: white;
+}
+
+.clockIn_title h1 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.clockIn_title h3 {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.clockIn_title span {
+    font-size: 18px;
+    font-weight: 600;
 }
