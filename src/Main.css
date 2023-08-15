@@ -5,6 +5,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.App {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+#active_link {
+    color: #FF5C00;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -122,6 +131,8 @@
 
 .home {
     width: 100%;
+    /* height: 100vh;
+    overflow: hidden; */
     display: flex;
 }
 
@@ -198,15 +209,20 @@
 }
 
 .wrapper {
+    /* height: 100%;
+    overflow: scroll; */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 0 50px 0;
+    padding: 50px 0;
+    /* padding: 550px 0 50px 0; */
     background-color: #F0F0F0;
 }
 
 .wrapper_content {
     display: grid;
+    /* padding-top: 100px;
+    margin-bottom: 100px; */
     grid-template-columns: repeat(4, 220px);
     gap: 16px;
     justify-content: space-between;

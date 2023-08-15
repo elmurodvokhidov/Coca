@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { ContextData } from '../context/Context';
 import { FiSearch } from "react-icons/fi";
 
-function Home(props) {
+function Home() {
     // catch the data from context
     const { sidebar, allInfo, search, searchFunction } = useContext(ContextData);
 
