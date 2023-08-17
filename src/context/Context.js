@@ -187,6 +187,9 @@ function ContextFunction({ children }) {
     // Session
     const [session, setSession] = useState();
 
+    // Order state
+    const [orderModal, setOrderModal] = useState(false);
+
 
     // Search function
     function searchFunction(e) {
@@ -228,6 +231,8 @@ function ContextFunction({ children }) {
             weekdays,
             monthName,
             session,
+            orderModal,
+            setOrderModal,
         }}>
             {children}
         </ContextData.Provider>
