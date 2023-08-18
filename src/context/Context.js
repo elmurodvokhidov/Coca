@@ -190,6 +190,9 @@ function ContextFunction({ children }) {
     // Order state
     const [orderModal, setOrderModal] = useState(false);
 
+    // Orders state
+    const [ordersModal, setOrdersModal] = useState(false);
+
 
     // Search function
     function searchFunction(e) {
@@ -233,6 +236,8 @@ function ContextFunction({ children }) {
             session,
             orderModal,
             setOrderModal,
+            ordersModal,
+            setOrdersModal,
         }}>
             {children}
         </ContextData.Provider>

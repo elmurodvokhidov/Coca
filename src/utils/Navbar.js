@@ -6,7 +6,7 @@ import { GoHome } from "react-icons/go";
 import { ContextData } from '../context/Context';
 
 function Navbar() {
-    const { clock } = useContext(ContextData);
+    const { clock, ordersModal, setOrdersModal } = useContext(ContextData);
 
     return (
         <div className='navbar'>
@@ -33,7 +33,7 @@ function Navbar() {
                         <NavLink><span><PiNoteLight /></span><span>Joylar</span></NavLink>
                     </li>
                     <li>
-                        <NavLink><span><PiNotepadLight /></span><span>Buyurtmalar</span></NavLink>
+                        <NavLink onClick={() => setOrdersModal(!ordersModal)}><span><PiNotepadLight /></span><span>Buyurtmalar</span></NavLink>
                     </li>
                 </ul>
 

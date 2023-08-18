@@ -191,7 +191,7 @@
     align-items: center;
     padding: 22px 24px;
     gap: 10px;
-    border-right: 1px solid #E4E4E4;
+    /* border-right: 1px solid #E4E4E4; */
 }
 
 .search label {
@@ -679,7 +679,6 @@
     border-bottom: 1px solid #E4E4E4;
 }
 
-
 .ordered_food_list figure {
     width: 34px;
     height: 34px;
@@ -798,4 +797,88 @@
     font-size: 16px;
     font-weight: 600;
     background: #FF5C00;
+}
+
+.orders {
+    flex-direction: column;
+    /* width: 300px; */
+    order: 3;
+    padding: 15px;
+}
+
+/* .orders_price {
+    background-color: blue;
+} */
+
+.orders_price ul {
+    list-style: none;
+}
+
+.orders_price ul:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 20px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid rgba(228, 228, 228, 1);
+}
+
+.orders_price ul:first-child~ul h5 {
+    color: #FF5C00;
+    font-weight: 900;
+}
+
+.orders_price h4 {
+    color: #828487;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.orders_price li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orders_price button {
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    border-radius: 58px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    background: #FF5C00;
+}
+
+.order_details {
+    padding: 0;
+}
+
+.order_details .ordered_food_list {
+    padding: 0;
+    background-color: white;
+    border-bottom: 1px solid rgba(228, 228, 228, 1);
+}
+
+.order_details .order_list_wrapper {
+    padding: 0;
+}
+
+.order_details .food_btns button {
+    width: 20px;
+    height: 20px;
+}
+
+.order_details .food_btns svg {
+    scale: .7;
+}
+
+.order_details .list_right button:first-child {
+    opacity: 1;
+}
+
+.order_details .ordered_food_list figure {
+    width: 50px;
+    height: 50px;
 }

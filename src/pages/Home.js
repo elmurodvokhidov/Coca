@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { ContextData } from '../context/Context';
-import { FiSearch } from "react-icons/fi";
+// import { FiSearch } from "react-icons/fi";
+import { BsChevronRight } from "react-icons/bs";
 
 function Home() {
     // catch the data from context
-    const { sidebar, allInfo, search, searchFunction, orderModal, setOrderModal } = useContext(ContextData);
+    const { sidebar, allInfo, search, searchFunction, orderModal, setOrderModal, ordersModal, setOrdersModal } = useContext(ContextData);
+
+    console.log(ordersModal);
 
     return (
         <div className='home'>
@@ -16,7 +19,7 @@ function Home() {
                             <div className="order_card_top">
                                 <h3>Buyurtma qo'shish</h3>
                                 <svg onClick={() => setOrderModal(false)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 5L19 19M19 5L5 19" stroke="#282930" stroke-width="1.5" stroke-linecap="round" />
+                                    <path d="M5 5L19 19M19 5L5 19" stroke="#282930" strokeWidth="1.5" strokeLinecap="round" />
                                 </svg>
                             </div>
 
@@ -32,13 +35,13 @@ function Home() {
                                 <div className="food_btns">
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M4.16675 10H15.8334" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M4.16675 10H15.8334" stroke="#9C9C9C" strokeWidth="1.5" strokeLinecap="round" />
                                         </svg>
                                     </button>
                                     <p>1</p>
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M4.16675 9.99996H15.8334M10.0001 4.16663V15.8333" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M4.16675 9.99996H15.8334M10.0001 4.16663V15.8333" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                                         </svg>
                                     </button>
                                 </div>
@@ -58,13 +61,13 @@ function Home() {
                                         <div className="list_right food_btns">
                                             <button>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                    <path d="M4.16675 10H15.8334" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="round" />
+                                                    <path d="M4.16675 10H15.8334" stroke="#9C9C9C" strokeWidth="1.5" strokeLinecap="round" />
                                                 </svg>
                                             </button>
                                             <p>1</p>
                                             <button>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                    <path d="M4.16675 9.99996H15.8334M10.0001 4.16663V15.8333" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                                    <path d="M4.16675 9.99996H15.8334M10.0001 4.16663V15.8333" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                                                 </svg>
                                             </button>
                                         </div>
@@ -106,6 +109,78 @@ function Home() {
                     ))
                 }
             </aside>
+
+            {/* Orders */}
+            <div className="orders" style={ordersModal ? {display: 'flex'} : {display: 'none'}}>
+                <div className="orders_top">
+                    <button>Buy</button>
+                    <button>Reservation</button>
+                </div>
+
+                <div className="about_costumers">
+                    <h3>Costumers Information</h3>
+                    <form>
+                        <div className="costumer_input">
+                            <input type="text" name="" id="" placeholder='Costumer name' />
+                        </div>
+                        <div className="costumer_input">
+                            <input type="text" name="" id="" placeholder='Select table' />
+                            <span><BsChevronRight /></span>
+                        </div>
+                        <button>Add note</button>
+                    </form>
+                </div>
+
+                <div className="order_details order_list">
+                    <h3>Orders details</h3>
+                    <div className="details_wrapper order_list_wrapper">
+                        <div className="ordered_food_list">
+                            <div className="list_left">
+                                <figure><img src="../../img/Image1.png" alt="" /></figure>
+                                <div className="list_left_box">
+                                    <h4>Rice</h4>
+                                    <p>$ 1.40</p>
+                                </div>
+                            </div>
+                            <div className="list_right food_btns">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M4.16675 10H15.8334" stroke="#9C9C9C" strokeWidth="1.5" strokeLinecap="round" />
+                                    </svg>
+                                </button>
+                                <p>1</p>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M4.16675 9.99996H15.8334M10.0001 4.16663V15.8333" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="orders_price">
+                    <ul>
+                        <li>
+                            <h4>Sub Total</h4>
+                            <h5>$ 62.13</h5>
+                        </li>
+                        <li>
+                            <h4>Tax (10%)</h4>
+                            <h5>$ 1.87</h5>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>
+                            <h4>Total</h4>
+                            <h5>$ 64.00</h5>
+                        </li>
+                    </ul>
+
+                    <button className='pay_button'>Pay Now</button>
+                </div>
+            </div>
 
             {/* main */}
             <main>
