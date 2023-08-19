@@ -803,7 +803,11 @@
     flex-direction: column;
     /* width: 300px; */
     order: 3;
-    padding: 15px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-left: 1px solid rgba(228, 228, 228, 1);
 }
 
 /* .orders_price {
@@ -856,7 +860,7 @@
 }
 
 .order_details .ordered_food_list {
-    padding: 0;
+    padding: 0 0 10px 0;
     background-color: white;
     border-bottom: 1px solid rgba(228, 228, 228, 1);
 }
@@ -881,4 +885,94 @@
 .order_details .ordered_food_list figure {
     width: 50px;
     height: 50px;
+}
+
+.order_details h3 {
+    font-size: 17px;
+}
+
+.order_details .list_left_box p {
+    color: #FF5C00;
+    font-weight: 600;
+}
+
+.orders_top {
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 5px;
+    background-color: rgba(229, 233, 246, 0.400);
+}
+
+.orders_top button {
+    border: none;
+    width: 50%;
+    color: #828487;
+    border-radius: 40px;
+    padding: 5px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.orders_top button:hover {
+    color: #19191C;
+    background-color: white;
+}
+
+.about_costumers {
+    /* background-color: red; */
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid rgba(228, 228, 228, 1);
+}
+
+.about_costumers h3 {
+    color: #19191C;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.about_costumers .costumer_input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(228, 228, 228, 1);
+    border-radius: 40px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.about_costumers .costumer_input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    color: #19191C;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.costumer_input span {
+    color: #828487;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 0;
+}
+
+.about_costumers button {
+    background-color: #ffaa1864;
+    border: none;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #FF5C00;
 }

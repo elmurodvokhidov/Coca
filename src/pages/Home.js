@@ -7,8 +7,6 @@ function Home() {
     // catch the data from context
     const { sidebar, allInfo, search, searchFunction, orderModal, setOrderModal, ordersModal, setOrdersModal } = useContext(ContextData);
 
-    console.log(ordersModal);
-
     return (
         <div className='home'>
             {/* Order Modal */}
@@ -111,7 +109,7 @@ function Home() {
             </aside>
 
             {/* Orders */}
-            <div className="orders" style={ordersModal ? {display: 'flex'} : {display: 'none'}}>
+            <div className="orders" style={ordersModal ? { display: 'flex' } : { display: 'none' }}>
                 <div className="orders_top">
                     <button>Buy</button>
                     <button>Reservation</button>
@@ -123,8 +121,8 @@ function Home() {
                         <div className="costumer_input">
                             <input type="text" name="" id="" placeholder='Costumer name' />
                         </div>
-                        <div className="costumer_input">
-                            <input type="text" name="" id="" placeholder='Select table' />
+                        <div className="costumer_input" style={{ cursor: 'pointer' }}>
+                            <input type="text" name="" id="" placeholder='Select table' disabled style={{ cursor: 'pointer' }} />
                             <span><BsChevronRight /></span>
                         </div>
                         <button>Add note</button>
