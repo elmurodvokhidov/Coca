@@ -193,6 +193,11 @@ function ContextFunction({ children }) {
     // Orders state
     const [ordersModal, setOrdersModal] = useState(false);
 
+    // Pay modal state
+    const [payState, setPayState] = useState(false);
+
+    // Calc state
+    const [calc, setCalc] = useState([]);
 
     // Search function
     function searchFunction(e) {
@@ -238,6 +243,10 @@ function ContextFunction({ children }) {
             setOrderModal,
             ordersModal,
             setOrdersModal,
+            payState,
+            setPayState,
+            calc,
+            setCalc,
         }}>
             {children}
         </ContextData.Provider>
