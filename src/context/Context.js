@@ -199,6 +199,9 @@ function ContextFunction({ children }) {
     // Calc state
     const [calc, setCalc] = useState([]);
 
+    // Order confirmation state
+    const [orderConfirm, setOrderConfirm] = useState(false);
+
     // Search function
     function searchFunction(e) {
         setSearch(e.target.value)
@@ -247,6 +250,8 @@ function ContextFunction({ children }) {
             setPayState,
             calc,
             setCalc,
+            orderConfirm,
+            setOrderConfirm,
         }}>
             {children}
         </ContextData.Provider>

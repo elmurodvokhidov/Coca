@@ -6,7 +6,7 @@ import { GrClose } from "react-icons/gr";
 
 function Home() {
     // catch the data from context
-    const { sidebar, allInfo, search, searchFunction, orderModal, setOrderModal, ordersModal, setOrdersModal, payState, setPayState, calc, setCalc } = useContext(ContextData);
+    const { sidebar, allInfo, search, searchFunction, orderModal, setOrderModal, ordersModal, setOrdersModal, payState, setPayState, calc, setCalc, orderConfirm, setOrderConfirm } = useContext(ContextData);
 
     return (
         <div className='home'>
@@ -113,8 +113,106 @@ function Home() {
             <div className="orders" style={ordersModal ? { display: 'flex' } : { display: 'none' }}>
 
                 {/* Pay modal window */}
-                <div className="payModal" style={payState ? { right: '0' } : { right: '-200%' }}>
-                    <div className="payModal_card">
+                <div className="payModal" onClick={() => setPayState(false)} style={payState ? { right: '0' } : { right: '-200%' }}>
+
+                    {/* Order confimation */}
+                    {
+                        orderConfirm ?
+                            <div className="order_confirmation" onClick={() => setOrderConfirm(false)}>
+                                <div className="order_confirmation_box" onClick={(e) => e.stopPropagation()}>
+                                    <div className="order_box_header">
+                                        <h1>Order confirmation</h1>
+                                        <p>Please confirm the order below to completed payment</p>
+                                    </div>
+
+                                    <div className="order_main">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Ovqat</th>
+                                                    <th>Soni</th>
+                                                    <th>Narxi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Steak sapi bakar</td>
+                                                    <td>1</td>
+                                                    <td>$ 25.12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mie kuah pedas</td>
+                                                    <td>1</td>
+                                                    <td>$ 11.21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mie kuah pedas</td>
+                                                    <td>1</td>
+                                                    <td>$ 11.21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ayam kentang</td>
+                                                    <td>1</td>
+                                                    <td>$ 15.40</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mie kuah pedas</td>
+                                                    <td>1</td>
+                                                    <td>$ 11.21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mie kuah pedas</td>
+                                                    <td>1</td>
+                                                    <td>$ 11.21</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mie kuah pedas</td>
+                                                    <td>1</td>
+                                                    <td>$ 11.21</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div className="order_about">
+                                        <div className="order_about_left">
+                                            <h3>Izoh</h3>
+                                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                        </div>
+                                        <div className="order_about_right">
+                                            <div className="order_about_line">
+                                                <h3>Mahsulotlar</h3>
+                                                <h4>$ 51.73</h4>
+                                            </div>
+                                            <div className="order_about_line">
+                                                <h3>Xizmat haqi</h3>
+                                                <h4>$ 0</h4>
+                                            </div>
+                                            <div className="order_about_line">
+                                                <h2>Jami</h2>
+                                                <h1>$ 51.73</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="order_footer">
+                                        <div className="order_footer_left">
+                                            <h3>To'lov usuli</h3>
+                                            <div className="order_footer_logo">
+                                                <img src="../../img/MoneyLogo.png" alt="money logo" />
+                                                <h4>Naqd</h4>
+                                            </div>
+                                        </div>
+                                        <div className="order_footer_right">
+                                            <button onClick={() => setOrderConfirm(false)}>Bekor qilish</button>
+                                            <button onClick={() => setOrderConfirm(false)}>Tasdiqlash</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> : ''
+                    }
+
+                    <div className="payModal_card" onClick={(e) => e.stopPropagation()}>
                         <div className="payModal_top">
                             <div className="payModal_top_left">
                                 <h3>Buyurtma to'lovi</h3>
@@ -225,7 +323,7 @@ function Home() {
                                 </span>
                                 <span>Chek olish</span>
                             </button>
-                            <button>
+                            <button onClick={() => setOrderConfirm(true)}>
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                         <path d="M4 11.8743L9.18415 17.683C9.26315 17.7715 9.40471 17.7725 9.48506 17.6851L20 6.25" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
