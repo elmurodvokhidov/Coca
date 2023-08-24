@@ -1374,3 +1374,140 @@
     color: white;
     background-color: #FF5C00;
 }
+
+.orders_page {
+    padding: 24px;
+}
+
+.orders_page h1 {
+    color: #19191C;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.orders_page .orders_page_table {
+    height: 640px;
+    overflow: auto;
+}
+
+.orders_page table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.orders_page table tr {
+    padding: 16px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.orders_page table td {
+    padding: 16px;
+}
+
+.orders_page table thead {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.orders_page table thead td {
+    color: #9C9C9C;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.orders_page tbody tr td:first-child h4 {
+    width: 50px;
+    height: 50px;
+    color: #FF5C00;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #FFF5EE;
+}
+
+.orders_page tbody tr td:nth-child(2) h3 {
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.orders_page tbody tr td:nth-child(2) p {
+    color: #828487;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.orders_page tbody tr td:nth-child(3) {
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.orders_page tbody tr td:nth-child(4) h5 {
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 48px;
+    padding: 6px 12px;
+}
+
+#active {
+    color: #3071FF;
+    background-color: #E5EDFE;
+}
+
+#canceled {
+    color: #FF5C00;
+    background-color: #FFF5EE;
+}
+
+#done {
+    color: #35C335;
+    background-color: #EFE;
+}
+
+.orders_page tbody tr td:nth-child(5) {
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.orders_page tbody tr td:nth-child(6) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.orders_page tbody tr td:nth-child(6) button {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#check_btn {
+    color: #FF5C00;
+    border: 1px solid #FF5C00;
+}
+
+#pay_btn {
+    color: #fff;
+    border: none;
+    background-color: #FF5C00;
+}
+
+#check_btn span:nth-child(1),
+#pay_btn span:nth-child(1) {
+    display: flex;
+    align-items: center;
+}

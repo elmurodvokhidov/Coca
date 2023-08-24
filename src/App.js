@@ -6,6 +6,7 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import ClockIn from './pages/ClockIn';
 import ClockOut from './pages/ClockOut';
+import Orders from './pages/Orders';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/clockin' element={<ClockIn />} />
           <Route path='/clockout' element={<ClockOut />} />
+          <Route path='/orders' element={<Orders />} />
         </Routes>
       }
     </div>

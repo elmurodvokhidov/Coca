@@ -202,6 +202,9 @@ function ContextFunction({ children }) {
     // Order confirmation state
     const [orderConfirm, setOrderConfirm] = useState(false);
 
+    // Navigate to Orders page
+    const orderNav = useNavigate();
+
     // Search function
     function searchFunction(e) {
         setSearch(e.target.value)
@@ -228,6 +231,12 @@ function ContextFunction({ children }) {
         }, 1000);
     }, []);
 
+    // Order navigation function
+    function order_func() {
+        setOrderConfirm(false);
+        orderNav('/orders')
+    }
+
     return (
         <ContextData.Provider value={{
             sidebar,
@@ -252,6 +261,8 @@ function ContextFunction({ children }) {
             setCalc,
             orderConfirm,
             setOrderConfirm,
+            orderNav,
+            order_func,
         }}>
             {children}
         </ContextData.Provider>

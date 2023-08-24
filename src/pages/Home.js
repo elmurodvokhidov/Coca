@@ -6,7 +6,20 @@ import { GrClose } from "react-icons/gr";
 
 function Home() {
     // catch the data from context
-    const { sidebar, allInfo, search, searchFunction, orderModal, setOrderModal, ordersModal, setOrdersModal, payState, setPayState, calc, setCalc, orderConfirm, setOrderConfirm } = useContext(ContextData);
+    const { sidebar,
+        allInfo,
+        search,
+        searchFunction,
+        orderModal,
+        setOrderModal,
+        ordersModal,
+        payState,
+        setPayState,
+        calc,
+        setCalc,
+        orderConfirm,
+        setOrderConfirm,
+        order_func } = useContext(ContextData);
 
     return (
         <div className='home'>
@@ -205,7 +218,7 @@ function Home() {
                                         </div>
                                         <div className="order_footer_right">
                                             <button onClick={() => setOrderConfirm(false)}>Bekor qilish</button>
-                                            <button onClick={() => setOrderConfirm(false)}>Tasdiqlash</button>
+                                            <button onClick={order_func}>Tasdiqlash</button>
                                         </div>
                                     </div>
                                 </div>
