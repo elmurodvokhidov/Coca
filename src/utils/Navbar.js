@@ -30,7 +30,7 @@ function Navbar() {
                         <NavLink id="active_link"><span><GoHome /></span><span>Bosh sahifa</span></NavLink>
                     </li>
                     <li>
-                        <NavLink><span><PiNoteLight /></span><span>Joylar</span></NavLink>
+                        <NavLink to={'/tables'}><span><PiNoteLight /></span><span>Joylar</span></NavLink>
                     </li>
                     <li>
                         <NavLink onClick={() => setOrdersModal(!ordersModal)}><span><PiNotepadLight /></span><span>Buyurtmalar</span></NavLink>
