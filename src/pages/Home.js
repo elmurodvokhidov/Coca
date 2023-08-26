@@ -19,7 +19,8 @@ function Home() {
         setCalc,
         orderConfirm,
         setOrderConfirm,
-        order_func } = useContext(ContextData);
+        order_func,
+        tableNav, } = useContext(ContextData);
 
     return (
         <div className='home'>
@@ -359,7 +360,7 @@ function Home() {
                         <div className="costumer_input">
                             <input type="text" name="" id="" placeholder='Costumer name' />
                         </div>
-                        <div className="costumer_input" style={{ cursor: 'pointer' }}>
+                        <div className="costumer_input" onClick={() => tableNav('/tables')} style={{ cursor: 'pointer' }}>
                             <input type="text" name="" id="" placeholder='Select table' disabled style={{ cursor: 'pointer' }} />
                             <span><BsChevronRight /></span>
                         </div>

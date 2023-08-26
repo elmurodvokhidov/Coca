@@ -27,7 +27,7 @@ function Navbar() {
             <div className='nav_right'>
                 <ul className='links'>
                     <li>
-                        <NavLink id="active_link"><span><GoHome /></span><span>Bosh sahifa</span></NavLink>
+                        <NavLink to={'/'} id="active_link"><span><GoHome /></span><span>Bosh sahifa</span></NavLink>
                     </li>
                     <li>
                         <NavLink to={'/tables'}><span><PiNoteLight /></span><span>Joylar</span></NavLink>

@@ -1505,9 +1505,9 @@ button {
     align-items: center;
 }
 
-.table_page {
-    background-color: red;
-}
+/* .table_page {
+    position: relative;
+} */
 
 .table_page_nav {
     display: flex;
@@ -1575,11 +1575,11 @@ button {
 }
 
 .caution_element:nth-child(3) span {
-    background-color: rgba(240, 180, 51, 0.16);
+    background-color: rgba(236, 254, 237, 1);
 }
 
 .caution_element:nth-child(3) span i {
-    background-color: rgba(240, 180, 51, 1);
+    background-color: rgba(19, 201, 27, 1);
 }
 
 .table_nav_filter {
@@ -1623,4 +1623,433 @@ button {
     outline: none;
     font-size: 16px;
     background-color: rgba(255, 255, 255, 0);
+}
+
+.table_page_main {
+    height: 685px;
+    overflow: auto;
+    padding: 60px 25px 30px;
+    background: #F8F9FD;
+}
+
+.table_main_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.table_card {
+    position: relative;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.table_card h1 {
+    position: absolute;
+    z-index: 1;
+    width: 86px;
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.table_card img {
+    cursor: pointer;
+}
+
+.table_page_footer {
+    position: fixed;
+    left: 25px;
+    bottom: -100%;
+    right: 25px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 20px;
+    border-radius: 16px;
+    transition: bottom .2s ease-in-out;
+    background-color: #FFF;
+    box-shadow: 0px 16px 30px -6px rgba(25, 25, 28, 0.16);
+}
+
+.table_footer_left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-right: 32px;
+    border-right: 1px solid #E4E4E4;
+}
+
+.table_footer_left aside h3 {
+    color: #19191C;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.table_footer_left aside p {
+    color: #828487;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.table_footer_wrapper {
+    width: 880px;
+    display: flex;
+    gap: 16px;
+}
+
+.table_footer_card {
+    width: 48px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #E4E4E4;
+}
+
+.table_footer_card h4 {
+    color: #19191C;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.table_footer_card button {
+    position: absolute;
+    top: -6px;
+    right: 0px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #EA4F3B;
+}
+
+.table_footer_card button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_footer_btn {
+    width: 270px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px;
+    border-radius: 58px;
+    border: none;
+    background-color: #FF5C00;
+}
+
+#visible_table_page_footer {
+    bottom: 25px;
+}
+
+/* #this_is_selected_card {
+    border: 3px solid #FF5C00;
+} */
+
+#selected_filter_btn {
+    border: 1px solid #FF5C00;
+    background: #FFF5EE;
+    color: #FF5C00;
+}
+
+.table_page_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: right;
+    z-index: 5;
+    background-color: rgba(25, 25, 28, 0.20);
+    backdrop-filter: blur(2px);
+}
+
+.table_page_modal_card {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: white;
+}
+
+.calendar_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.calendar_top h4,
+.calendar_top button {
+    color: #828487;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.calendar_top button span:last-child {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.calendar_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    border: 1px solid #E4E4E4;
+}
+
+.calendar_cells {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    border-right: 1px solid #E4E4E4;
+}
+
+.calendar_cells span:first-child {
+    color: #9C9C9C;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.calendar_cells span:last-child {
+    color: #19191C;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.calendar_cells:last-child {
+    border: none;
+}
+
+.table_modal_customers_list {
+    height: 450px;
+    overflow: auto;
+}
+
+.table_modal_customers_list table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.table_modal_customers_list table thead {
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.table_modal_customers_list table th,
+.table_modal_customers_list table td {
+    padding: 16px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.table_modal_customers_list table th {
+    color: #9C9C9C;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.table_modal_customers_list table td {
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.table_modal_customers_list table td:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.table_modal_customers_list table td:last-child span:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.table_page_modal_btn {
+    padding: 12px;
+    border-radius: 58px;
+    background-color: #FF5C00;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    margin-top: 50px;
+}
+
+.table_page_popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(25, 25, 28, 0.20);
+    backdrop-filter: blur(2px);
+}
+
+.table_page_popup_card {
+    border-radius: 16px;
+    background-color: white;
+}
+
+.table_page_popup_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.table_page_popup_top h3 {
+    color: #19191C;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.table_page_popup_top button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 20px;
+}
+
+.table_popup_person_info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 25px;
+}
+
+.popup_inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup_inputs label {
+    color: #828487;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.popup_inputs input {
+    color: #19191C;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    padding: 14px 20px;
+    border-radius: 16px;
+    border: 1px solid #E4E4E4;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.guests_num {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guests_num h3,
+.time_of_order h3 {
+    color: #828487;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.select_num_guests {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    border: 1px solid #E4E4E4;
+}
+
+.select_num_guests h2 {
+    width: 200px;
+    padding: 16px 20px;
+    text-align: center;
+    color: #19191C;
+    font-size: 16px;
+    font-weight: 600;
+    border-right: 1px solid #E4E4E4;
+}
+
+.select_num_guests h2:last-child {
+    border: none;
+}
+
+.time_of_order {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.time_of_order table {
+    border-collapse: collapse;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #E4E4E4;
+}
+
+.time_of_order table td {
+    padding: 10px 20px;
+    border: 1px solid #E4E4E4;
+}
+
+.time_of_order table span {
+    display: block;
+}
+
+.table_popup_footer {
+    display: flex;
+    gap: 15px;
+    padding: 25px;
+}
+
+.table_popup_footer button {
+    width: 50%;
+    padding: 12px;
+    border-radius: 58px;
+    border: 1px solid #FF5C00;
+    color: #FF5C00;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.table_popup_footer button:last-child {
+    border: none;
+    color: #FFF;
+    background-color: #FF5C00;
 }

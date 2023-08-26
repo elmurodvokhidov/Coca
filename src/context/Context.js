@@ -205,6 +205,120 @@ function ContextFunction({ children }) {
     // Navigate to Orders page
     const orderNav = useNavigate();
 
+    // Navigate to Table page
+    const tableNav = useNavigate();
+
+    // All Table informations state
+    const [tableInfo, setTableInfo] = useState([
+        {
+            img: '../img/Table.png',
+            name: 'T-01',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-02',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table2.png',
+            name: 'T-03',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-04',
+            type: 'busy',
+        },
+        {
+            img: '../img/Table.png',
+            name: 'T-05',
+            type: 'order',
+        },
+        {
+            img: '../img/Table3.png',
+            name: 'T-06',
+            type: 'busy',
+        },
+        {
+            img: '../img/Table2.png',
+            name: 'T-07',
+            type: 'busy',
+        },
+        {
+            img: '../img/Table3.png',
+            name: 'T-08',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-09',
+            type: 'busy',
+        },
+        {
+            img: '../img/Table.png',
+            name: 'T-10',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table2.png',
+            name: 'T-11',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table.png',
+            name: 'T-12',
+            type: 'order',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-13',
+            type: 'order',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-14',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-15',
+            type: 'order',
+        },
+        {
+            img: '../img/Table.png',
+            name: 'T-16',
+            type: 'empty',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-17',
+            type: 'busy',
+        },
+        {
+            img: '../img/Table1.png',
+            name: 'T-18',
+            type: 'empty',
+        },
+    ]);
+
+    // Selected tables state
+    const [selectedTables, setSelectedTables] = useState([]);
+
+    // Filter Tables state
+    const [filterTables, setFilterTables] = useState('');
+
+    // Search state for Table page
+    const [searchTable, setSearchTable] = useState('');
+
+    // Table page modal state
+    const [tableModalState, setTableModalState] = useState({
+        modal: false,
+        popup: false,
+    });
+
+    console.log(tableModalState)
+
     // Search function
     function searchFunction(e) {
         setSearch(e.target.value)
@@ -235,7 +349,24 @@ function ContextFunction({ children }) {
     function order_func() {
         setOrderConfirm(false);
         orderNav('/orders')
-    }
+    };
+
+    // Selected Tables function
+    function selectedTablesFunc(a) {
+        if (selectedTables.filter(val => val.name === a.name).length === 0) {
+            setSelectedTables([...selectedTables, { ...a }]);
+        }
+        else {
+            deleteTableCardFunc(a.name);
+        }
+    };
+
+    // Delete Tablse Card element
+    function deleteTableCardFunc(name) {
+        setSelectedTables(
+            selectedTables.filter(item => item.name !== name)
+        );
+    };
 
     return (
         <ContextData.Provider value={{
@@ -263,6 +394,19 @@ function ContextFunction({ children }) {
             setOrderConfirm,
             orderNav,
             order_func,
+            tableNav,
+            tableInfo,
+            setTableInfo,
+            selectedTables,
+            setSelectedTables,
+            selectedTablesFunc,
+            deleteTableCardFunc,
+            filterTables,
+            setFilterTables,
+            searchTable,
+            setSearchTable,
+            tableModalState,
+            setTableModalState,
         }}>
             {children}
         </ContextData.Provider>
