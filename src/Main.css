@@ -1831,6 +1831,10 @@ button {
     border-right: 1px solid #E4E4E4;
 }
 
+.calendar_cells:first-child {
+    padding: 20px 15px;
+}
+
 .calendar_cells span:first-child {
     color: #9C9C9C;
     font-size: 12px;
@@ -1839,7 +1843,7 @@ button {
 
 .calendar_cells span:last-child {
     color: #19191C;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
 }
 
@@ -1928,47 +1932,47 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px;
+    padding: 15px 25px;
     border-bottom: 1px solid #E4E4E4;
 }
 
 .table_page_popup_top h3 {
     color: #19191C;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
 .table_page_popup_top button {
     border: none;
     background-color: rgba(255, 255, 255, 0);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .table_popup_person_info {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    padding: 20px 25px;
+    gap: 15px;
+    padding: 15px 25px;
 }
 
 .popup_inputs {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .popup_inputs label {
     color: #828487;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
 }
 
 .popup_inputs input {
     color: #19191C;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     outline: none;
-    padding: 14px 20px;
+    padding: 10px 20px;
     border-radius: 16px;
     border: 1px solid #E4E4E4;
     background-color: rgba(255, 255, 255, 0);
@@ -1977,14 +1981,26 @@ button {
 .guests_num {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .guests_num h3,
 .time_of_order h3 {
     color: #828487;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
+}
+
+.table_popup_person_info .calendar_footer {
+    justify-content: center;
+}
+
+.table_popup_person_info .calendar_cells {
+    padding: 10px 25px;
+}
+
+.table_popup_person_info .calendar_cells:first-child {
+    padding: 20px 25px;
 }
 
 .select_num_guests {
@@ -1997,10 +2013,10 @@ button {
 
 .select_num_guests h2 {
     width: 200px;
-    padding: 16px 20px;
+    padding: 12px 20px;
     text-align: center;
     color: #19191C;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     border-right: 1px solid #E4E4E4;
 }
@@ -2012,7 +2028,7 @@ button {
 .time_of_order {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .time_of_order table {
@@ -2023,27 +2039,37 @@ button {
 }
 
 .time_of_order table td {
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: 1px solid #E4E4E4;
 }
 
-.time_of_order table span {
+.time_of_order table span:first-child {
     display: block;
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.time_of_order table span:last-child {
+    display: block;
+    color: #9C9C9C;
+    font-size: 10px;
+    font-weight: 500;
 }
 
 .table_popup_footer {
     display: flex;
     gap: 15px;
-    padding: 25px;
+    padding: 15px 25px;
 }
 
 .table_popup_footer button {
     width: 50%;
-    padding: 12px;
+    padding: 10px 12px;
     border-radius: 58px;
     border: 1px solid #FF5C00;
     color: #FF5C00;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     background-color: rgba(255, 255, 255, 0);
 }

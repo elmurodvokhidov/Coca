@@ -103,96 +103,6 @@ function Tables() {
                 </div>
 
                 <div className="table_page_modal" onClick={() => setTableModalState({ ...tableModalState, modal: false })} style={tableModalState.modal ? { display: 'flex' } : { display: 'none' }}>
-                    <div className="table_page_popup" onClick={() => setTableModalState({ ...tableModalState, popup: false })} style={tableModalState.popup ? { display: 'flex' } : { display: 'none' }}>
-                        <div className="table_page_popup_card" onClick={(e) => e.stopPropagation()}>
-                            <div className="table_page_popup_top">
-                                <h3>Yangi buyurtma</h3>
-                                <button onClick={() => setTableModalState({ ...tableModalState, popup: false })}><GrClose /></button>
-                            </div>
-
-                            <div className="table_popup_person_info">
-                                <div className="popup_inputs">
-                                    <label htmlFor="who_gave_that">Kim tomonidan</label>
-                                    <input type="text" name="who_gave_that" id="who_gave_that" />
-                                </div>
-                                <div className="popup_inputs">
-                                    <label htmlFor="phone_number">Telefon raqami</label>
-                                    <input type="text" name="phone_number" id="phone_number" />
-                                </div>
-                                <div className="guests_num">
-                                    <h3>Mehmonlar soni</h3>
-                                    <div className="select_num_guests">
-                                        <h2>1 - 4</h2>
-                                        <h2>5 - 8</h2>
-                                        <h2>8+</h2>
-                                    </div>
-                                </div>
-                                <div className="table_page_modal_calendar">
-                                    <div className="calendar_top">
-                                        <h4>Sanani tanlang</h4>
-                                        <button><span>March 2023</span> <span><FiChevronDown /></span></button>
-                                    </div>
-                                    <div className="calendar_footer">
-                                        <div className="calendar_cells">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                                                <path d="M4.76588 6.98274C4.86239 5.93961 5.69543 5.11779 6.73865 5.02788C11.0269 4.65829 14.0044 4.65722 18.2583 5.0256C19.3066 5.11639 20.1407 5.94647 20.2335 6.99512C20.6079 11.2276 20.5734 14.2161 20.2203 18.484C20.1326 19.5444 19.2928 20.3889 18.2331 20.4787C13.9667 20.8405 10.9928 20.8397 6.78078 20.4805C5.71856 20.3899 4.87877 19.5409 4.792 18.4778C4.44716 14.253 4.37042 11.2572 4.76588 6.98274Z" stroke="#FF5C00" stroke-width="1.5" />
-                                                <path d="M8.5 3.25V6.75" stroke="#FF5C00" stroke-width="1.5" stroke-linecap="round" />
-                                                <path d="M16.5 3.25V6.75" stroke="#FF5C00" stroke-width="1.5" stroke-linecap="round" />
-                                                <path d="M5 9.75H20" stroke="#FF5C00" stroke-width="1.5" stroke-linecap="round" />
-                                                <path d="M8.5 13.25H8.51" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
-                                                <path d="M8.5 16.75H8.51" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
-                                                <path d="M12.5098 13.25H12.5198" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
-                                                <path d="M12.5098 16.75H12.5198" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
-                                                <path d="M16.52 13.25H16.53" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
-                                                <path d="M16.52 16.75H16.53" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
-                                            </svg>
-                                        </div>
-                                        <div className="calendar_cells"><span>Sun</span><span>5</span></div>
-                                        <div className="calendar_cells"><span>Mon</span><span>6</span></div>
-                                        <div className="calendar_cells"><span>Tue</span><span>7</span></div>
-                                        <div className="calendar_cells"><span>Wed</span><span>8</span></div>
-                                        <div className="calendar_cells"><span>Thu</span><span>9</span></div>
-                                        <div className="calendar_cells"><span>Fri</span><span>10</span></div>
-                                        <div className="calendar_cells"><span>Sat</span><span>11</span></div>
-                                    </div>
-                                </div>
-
-                                <div className="time_of_order">
-                                    <h3>Vaqti</h3>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td><span>09:00</span><span>AM</span></td>
-                                                <td><span>09:15</span><span>AM</span></td>
-                                                <td><span>11:00</span><span>AM</span></td>
-                                                <td><span>12:45</span><span>PM</span></td>
-                                                <td><span>01:00</span><span>PM</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>01:15</span><span>PM</span></td>
-                                                <td><span>02:45</span><span>PM</span></td>
-                                                <td><span>03:00</span><span>PM</span></td>
-                                                <td><span>05:15</span><span>PM</span></td>
-                                                <td><span>06:00</span><span>PM</span></td>
-                                            </tr>
-                                            <tr>
-                                                <td><span>07:15</span><span>AM</span></td>
-                                                <td><span>07:45</span><span>AM</span></td>
-                                                <td><span>08:30</span><span>AM</span></td>
-                                                <td><span>08:45</span><span>AM</span></td>
-                                                <td><span>09:00</span><span>AM</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div className="table_popup_footer">
-                                <button>Bekor qilish</button><button>Saqlash</button>
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="table_page_modal_card" onClick={(e) => e.stopPropagation()}>
                         <div className="table_page_modal_calendar">
                             <div className="calendar_top">
@@ -366,6 +276,97 @@ function Tables() {
                         </div>
 
                         <button className="table_page_modal_btn" onClick={() => setTableModalState({ ...tableModalState, popup: true })}>Yangi buyurtmani qo'shish</button>
+                    </div>
+                </div>
+
+                <div className="table_page_popup" onClick={() => setTableModalState({ ...tableModalState, popup: false })} style={tableModalState.popup ? { display: 'flex' } : { display: 'none' }}>
+                    <div className="table_page_popup_card" onClick={(e) => e.stopPropagation()}>
+                        <div className="table_page_popup_top">
+                            <h3>Yangi buyurtma</h3>
+                            <button onClick={() => setTableModalState({ ...tableModalState, popup: false })}><GrClose /></button>
+                        </div>
+
+                        <div className="table_popup_person_info">
+                            <div className="popup_inputs">
+                                <label htmlFor="who_gave_that">Kim tomonidan</label>
+                                <input type="text" name="who_gave_that" id="who_gave_that" />
+                            </div>
+                            <div className="popup_inputs">
+                                <label htmlFor="phone_number">Telefon raqami</label>
+                                <input type="text" name="phone_number" id="phone_number" />
+                            </div>
+                            <div className="guests_num">
+                                <h3>Mehmonlar soni</h3>
+                                <div className="select_num_guests">
+                                    <h2>1 - 4</h2>
+                                    <h2>5 - 8</h2>
+                                    <h2>8+</h2>
+                                </div>
+                            </div>
+                            <div className="table_page_modal_calendar">
+                                <div className="calendar_top">
+                                    <h4>Sanani tanlang</h4>
+                                    <button><span>March 2023</span> <span><FiChevronDown /></span></button>
+                                </div>
+                                <div className="calendar_footer">
+                                    <div className="calendar_cells">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                            <path d="M4.76588 6.98274C4.86239 5.93961 5.69543 5.11779 6.73865 5.02788C11.0269 4.65829 14.0044 4.65722 18.2583 5.0256C19.3066 5.11639 20.1407 5.94647 20.2335 6.99512C20.6079 11.2276 20.5734 14.2161 20.2203 18.484C20.1326 19.5444 19.2928 20.3889 18.2331 20.4787C13.9667 20.8405 10.9928 20.8397 6.78078 20.4805C5.71856 20.3899 4.87877 19.5409 4.792 18.4778C4.44716 14.253 4.37042 11.2572 4.76588 6.98274Z" stroke="#FF5C00" stroke-width="1.5" />
+                                            <path d="M8.5 3.25V6.75" stroke="#FF5C00" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M16.5 3.25V6.75" stroke="#FF5C00" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M5 9.75H20" stroke="#FF5C00" stroke-width="1.5" stroke-linecap="round" />
+                                            <path d="M8.5 13.25H8.51" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
+                                            <path d="M8.5 16.75H8.51" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
+                                            <path d="M12.5098 13.25H12.5198" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
+                                            <path d="M12.5098 16.75H12.5198" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
+                                            <path d="M16.52 13.25H16.53" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
+                                            <path d="M16.52 16.75H16.53" stroke="#FF5C00" stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                    <div className="calendar_cells"><span>Sun</span><span>5</span></div>
+                                    <div className="calendar_cells"><span>Mon</span><span>6</span></div>
+                                    <div className="calendar_cells"><span>Tue</span><span>7</span></div>
+                                    <div className="calendar_cells"><span>Wed</span><span>8</span></div>
+                                    <div className="calendar_cells"><span>Thu</span><span>9</span></div>
+                                    <div className="calendar_cells"><span>Fri</span><span>10</span></div>
+                                    <div className="calendar_cells"><span>Sat</span><span>11</span></div>
+                                </div>
+                            </div>
+
+                            <div className="time_of_order">
+                                <h3>Vaqti</h3>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><span>09:00</span><span>AM</span></td>
+                                            <td><span>09:15</span><span>AM</span></td>
+                                            <td><span>11:00</span><span>AM</span></td>
+                                            <td><span>12:45</span><span>PM</span></td>
+                                            <td><span>01:00</span><span>PM</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>01:15</span><span>PM</span></td>
+                                            <td><span>02:45</span><span>PM</span></td>
+                                            <td><span>03:00</span><span>PM</span></td>
+                                            <td><span>05:15</span><span>PM</span></td>
+                                            <td><span>06:00</span><span>PM</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>07:15</span><span>AM</span></td>
+                                            <td><span>07:45</span><span>AM</span></td>
+                                            <td><span>08:30</span><span>AM</span></td>
+                                            <td><span>08:45</span><span>AM</span></td>
+                                            <td><span>09:00</span><span>AM</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div className="table_popup_footer">
+                            <button onClick={() => setTableModalState({ ...tableModalState, popup: false })}>Bekor qilish</button>
+                            <button>Saqlash</button>
+                        </div>
                     </div>
                 </div>
             </div>
