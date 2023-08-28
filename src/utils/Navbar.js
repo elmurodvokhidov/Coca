@@ -6,10 +6,10 @@ import { GoHome } from "react-icons/go";
 import { ContextData } from '../context/Context';
 
 function Navbar() {
-    const { clock, ordersModal, setOrdersModal } = useContext(ContextData);
+    const { clock, ordersModal, setOrdersModal, adminState } = useContext(ContextData);
 
     return (
-        <div className='navbar'>
+        <div className='navbar' style={adminState ? { display: 'none' } : { display: 'flex' }}>
             <div className="nav_left">
                 <span id="back"><NavLink to={'/home'}><BiArrowBack /></NavLink></span>
 

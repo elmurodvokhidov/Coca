@@ -260,7 +260,9 @@ function Home() {
                                 <table className="payModal_calculator">
                                     <thead>
                                         <tr>
-                                            <input type="text" value={calc} name='window' className="cal_window" placeholder="150 000 so'm" disabled />
+                                            <td>
+                                                <input type="text" value={calc} name='window' className="cal_window" placeholder="150 000 so'm" disabled />
+                                            </td>
                                         </tr>
                                     </thead>
 
@@ -361,7 +363,8 @@ function Home() {
                             <input type="text" name="" id="" placeholder='Costumer name' />
                         </div>
                         <div className="costumer_input" onClick={() => tableNav('/tables')} style={{ cursor: 'pointer' }}>
-                            <input type="text" name="" id="" placeholder='Select table' disabled style={{ cursor: 'pointer' }} />
+                            {/* <input type="text" name="" id="" placeholder='Select table' disabled style={{ cursor: 'pointer' }} /> */}
+                            <p>Select table</p>
                             <span><BsChevronRight /></span>
                         </div>
                         <button>Add note</button>

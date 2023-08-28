@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ContextData } from '../context/Context';
 
-function Login(props) {
+function Login() {
+    const { dashboardNav } = useContext(ContextData);
+
     return (
         <div className='login'>
             {/* <figure><img src="../../img/Background.png" alt="background" /></figure> */}
@@ -26,8 +29,8 @@ function Login(props) {
                         <label htmlFor="username">Username</label>
                         <div className="login_input">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M15.5001 6.5C15.5001 8.433 13.9331 10 12.0001 10C10.0671 10 8.50005 8.433 8.50005 6.5C8.50005 4.567 10.0671 3 12.0001 3C13.9331 3 15.5001 4.567 15.5001 6.5Z" stroke="#19191C" stroke-width="1.5" />
-                                <path d="M5.42419 17.4898C5.76699 15.1147 7.60572 13.1739 9.99904 12.9995C11.3665 12.8999 12.6384 12.8997 14.0032 12.999C16.3956 13.1729 18.233 15.1137 18.5756 17.4878L18.6423 17.9495C18.8398 19.3178 17.8892 20.595 16.5146 20.7424C13.2885 21.0883 10.7222 21.0843 7.49126 20.7397C6.1145 20.5928 5.16081 19.3146 5.3586 17.9442L5.42419 17.4898Z" stroke="#19191C" stroke-width="1.5" />
+                                <path d="M15.5001 6.5C15.5001 8.433 13.9331 10 12.0001 10C10.0671 10 8.50005 8.433 8.50005 6.5C8.50005 4.567 10.0671 3 12.0001 3C13.9331 3 15.5001 4.567 15.5001 6.5Z" stroke="#19191C" strokeWidth="1.5" />
+                                <path d="M5.42419 17.4898C5.76699 15.1147 7.60572 13.1739 9.99904 12.9995C11.3665 12.8999 12.6384 12.8997 14.0032 12.999C16.3956 13.1729 18.233 15.1137 18.5756 17.4878L18.6423 17.9495C18.8398 19.3178 17.8892 20.595 16.5146 20.7424C13.2885 21.0883 10.7222 21.0843 7.49126 20.7397C6.1145 20.5928 5.16081 19.3146 5.3586 17.9442L5.42419 17.4898Z" stroke="#19191C" strokeWidth="1.5" />
                             </svg>
                             <input type="text" name="username" id="username" placeholder='Enter username' />
                         </div>
@@ -37,9 +40,9 @@ function Login(props) {
                         <label htmlFor="password">Password</label>
                         <div className="login_input">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M8.5 7.5V6.5C8.5 4.567 10.067 3 12 3V3C13.933 3 15.5 4.567 15.5 6.5V7.5" stroke="#19191C" stroke-width="1.5" stroke-linecap="round" />
-                                <path d="M4.74926 9.8141C4.83974 8.96656 5.62072 8.29883 6.59873 8.22578C10.619 7.92549 13.4104 7.92461 17.3984 8.22393C18.3812 8.29769 19.1632 8.97213 19.2502 9.82416C19.6012 13.2631 19.5688 15.6912 19.2378 19.1589C19.1555 20.0204 18.3682 20.7066 17.3748 20.7796C13.375 21.0736 10.587 21.0729 6.63823 20.781C5.6424 20.7074 4.8551 20.0176 4.77375 19.1539C4.45047 15.7212 4.37852 13.2871 4.74926 9.8141Z" stroke="#19191C" stroke-width="1.5" />
-                                <path d="M12 15.75C13.1046 15.75 14 14.8546 14 13.75C14 12.6454 13.1046 11.75 12 11.75C10.8954 11.75 10 12.6454 10 13.75C10 14.8546 10.8954 15.75 12 15.75ZM12 15.75V17.25" stroke="#19191C" stroke-width="1.5" stroke-linecap="round" />
+                                <path d="M8.5 7.5V6.5C8.5 4.567 10.067 3 12 3V3C13.933 3 15.5 4.567 15.5 6.5V7.5" stroke="#19191C" strokeWidth="1.5" strokeLinecap="round" />
+                                <path d="M4.74926 9.8141C4.83974 8.96656 5.62072 8.29883 6.59873 8.22578C10.619 7.92549 13.4104 7.92461 17.3984 8.22393C18.3812 8.29769 19.1632 8.97213 19.2502 9.82416C19.6012 13.2631 19.5688 15.6912 19.2378 19.1589C19.1555 20.0204 18.3682 20.7066 17.3748 20.7796C13.375 21.0736 10.587 21.0729 6.63823 20.781C5.6424 20.7074 4.8551 20.0176 4.77375 19.1539C4.45047 15.7212 4.37852 13.2871 4.74926 9.8141Z" stroke="#19191C" strokeWidth="1.5" />
+                                <path d="M12 15.75C13.1046 15.75 14 14.8546 14 13.75C14 12.6454 13.1046 11.75 12 11.75C10.8954 11.75 10 12.6454 10 13.75C10 14.8546 10.8954 15.75 12 15.75ZM12 15.75V17.25" stroke="#19191C" strokeWidth="1.5" strokeLinecap="round" />
                             </svg>
                             <input type="password" name="password" id="password" placeholder='Enter password' />
                         </div>
@@ -47,7 +50,7 @@ function Login(props) {
 
                     <p className='forgot'><NavLink>Forgot password?</NavLink></p>
 
-                    <button>Running order</button>
+                    <button onClick={() => dashboardNav('/dashboard')}>Running order</button>
                 </form>
                 <p className='endUser'>End user agreement</p>
             </div>

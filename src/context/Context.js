@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const ContextData = React.createContext();
 
@@ -208,6 +208,9 @@ function ContextFunction({ children }) {
     // Navigate to Table page
     const tableNav = useNavigate();
 
+    // Navigate to Dashboard
+    const dashboardNav = useNavigate();
+
     // All Table informations state
     const [tableInfo, setTableInfo] = useState([
         {
@@ -317,7 +320,32 @@ function ContextFunction({ children }) {
         popup: false,
     });
 
-    console.log(tableModalState)
+    // Admin state for navbar
+    const [adminState, setAdminState] = useState(
+        JSON.parse(localStorage.getItem('admin_state_for_navbar')) || localStorage.setItem('admin_state_for_navbar', false)
+    );
+
+    // Refresh function for admin state
+    function refresh_admin_state_fun() {
+        setAdminState(JSON.parse(localStorage.getItem('admin_state_for_navbar')))
+    };
+
+    // The IDENTIFICATOR CONDITION that changes the value of 'admin state'
+    const location = useLocation();
+
+    // Access the pathname from the location object
+    const currentPath = location.pathname;
+
+    useEffect(() => {
+        if (currentPath === '/dashboard') {
+            localStorage.setItem('admin_state_for_navbar', true);
+            refresh_admin_state_fun();
+        }
+        else {
+            localStorage.setItem('admin_state_for_navbar', false);
+            refresh_admin_state_fun();
+        }
+    }, [currentPath]);
 
     // Search function
     function searchFunction(e) {
@@ -407,6 +435,9 @@ function ContextFunction({ children }) {
             setSearchTable,
             tableModalState,
             setTableModalState,
+            adminState,
+            setAdminState,
+            dashboardNav,
         }}>
             {children}
         </ContextData.Provider>
