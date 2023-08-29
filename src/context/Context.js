@@ -330,6 +330,41 @@ function ContextFunction({ children }) {
         setAdminState(JSON.parse(localStorage.getItem('admin_state_for_navbar')))
     };
 
+    // Employees data state
+    const [employees, setEmployees] = useState([
+        {
+            table_num: 'T-06',
+            full_name: 'Eshmatov Toshmat',
+            age: '28',
+            phone_num: '+998 99 111 44 56',
+            position: 'Menejer',
+            address: 'Namangan',
+        },
+        {
+            table_num: 'T-06',
+            full_name: 'Alakimov Alakim',
+            age: '30',
+            phone_num: '+998 99 886 20 66',
+            position: 'Ofitsiant',
+            address: 'Toshkent',
+        },
+        {
+            table_num: 'T-06',
+            full_name: 'Birnarsayev Birnarsa',
+            age: '25',
+            phone_num: '+998 99 001 56 11',
+            position: 'Hisobchi',
+            address: 'Samarqand',
+        },
+    ]);
+
+    // Active link to Admin siderbar state
+    const [activeSidebarLink, setActiveSidebarLink] = useState({
+        dashboard: false,
+        employees: false,
+        panel: false,
+    });
+
     // The IDENTIFICATOR CONDITION that changes the value of 'admin state'
     const location = useLocation();
 
@@ -337,7 +372,7 @@ function ContextFunction({ children }) {
     const currentPath = location.pathname;
 
     useEffect(() => {
-        if (currentPath === '/dashboard') {
+        if (currentPath === '/dashboard' || currentPath === '/employees' || currentPath === '/panel') {
             localStorage.setItem('admin_state_for_navbar', true);
             refresh_admin_state_fun();
         }
@@ -345,7 +380,24 @@ function ContextFunction({ children }) {
             localStorage.setItem('admin_state_for_navbar', false);
             refresh_admin_state_fun();
         }
-    }, [currentPath]);
+
+        // switch (currentPath) {
+        //     case currentPath === "/dashboard":
+        //         setActiveSidebarLink({ ...activeSidebarLink, dashboard: true })
+        //         break;
+
+        //     case currentPath === "/employees":
+        //         setActiveSidebarLink({ ...activeSidebarLink, employees: true })
+        //         break;
+
+        //     case currentPath === "/panel":
+        //         setActiveSidebarLink({ ...activeSidebarLink, panel: true })
+        //         break;
+
+        //     default:
+        //         break;
+        // }
+    }, [currentPath, activeSidebarLink]);
 
     // Search function
     function searchFunction(e) {
@@ -438,6 +490,9 @@ function ContextFunction({ children }) {
             adminState,
             setAdminState,
             dashboardNav,
+            employees,
+            setEmployees,
+            activeSidebarLink,
         }}>
             {children}
         </ContextData.Provider>

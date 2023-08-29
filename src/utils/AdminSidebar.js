@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ContextData } from '../context/Context';
 
 function AdminSidebar() {
+    const { activeSidebarLink } = useContext(ContextData);
+
     return (
         <div className='admin_sidebar'>
             <div className="admin_sidebar_links">
-                <NavLink>
+                <NavLink to={'/dashboard'} id={activeSidebarLink.dashboard ? 'active_link_sidebar' : ''}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M18.6181 14.5C18.7435 14.5 18.838 14.6144 18.8109 14.7368C18.0177 18.32 14.8218 21 11 21C6.58172 21 3 17.4183 3 13C3 9.17815 5.67998 5.98225 9.26319 5.18905C9.38562 5.16195 9.5 5.2565 9.5 5.3819V12.3073C9.5 13.5183 10.4817 14.5 11.6927 14.5H18.6181Z" fill="white" />
@@ -13,7 +16,7 @@ function AdminSidebar() {
                         </svg>
                     </span>
                 </NavLink>
-                <NavLink>
+                <NavLink to={'/employees'} id={activeSidebarLink.employees ? 'active_link_sidebar' : ''}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M15.5001 6.5C15.5001 8.433 13.9331 10 12.0001 10C10.0671 10 8.50005 8.433 8.50005 6.5C8.50005 4.567 10.0671 3 12.0001 3C13.9331 3 15.5001 4.567 15.5001 6.5Z" stroke="#E4E4E4" strokeWidth="1.5" />
@@ -21,7 +24,7 @@ function AdminSidebar() {
                         </svg>
                     </span>
                 </NavLink>
-                <NavLink>
+                <NavLink to={'/panel'} id={activeSidebarLink.panel ? 'active_link_sidebar' : ''}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M3.38675 7.5C3.13755 7.89058 3 8.33949 3 8.80613V15.1939C3 16.1271 3.55021 16.9895 4.44338 17.4562L10.5566 20.65C11.0032 20.8833 11.5016 21 12 21M3.38675 7.5C3.63595 7.10942 3.99679 6.77717 4.44338 6.54385L7.5 4.94691M3.38675 7.5L12 12M12 12V21M12 12L16.3066 9.75M12 21C12.4984 21 12.9968 20.8833 13.4434 20.65L19.5566 17.4562C20.4498 16.9895 21 16.1271 21 15.1939V8.80613C21 8.33949 20.8624 7.89058 20.6132 7.5M20.6132 7.5C20.3641 7.10942 20.0032 6.77717 19.5566 6.54385L13.4434 3.34998C12.5502 2.88334 11.4498 2.88334 10.5566 3.34998L7.5 4.94691M20.6132 7.5L16.3066 9.75M16.3066 9.75L7.5 4.94691M16.3066 9.75V13" stroke="#C2C2C2" strokeWidth="1.5" strokeLinecap="round" />

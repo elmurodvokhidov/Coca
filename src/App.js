@@ -9,6 +9,8 @@ import ClockOut from './pages/ClockOut';
 import Orders from './pages/Orders';
 import Tables from './pages/Tables';
 import Dashboard from './admin_page/Dashboard';
+import Employees from './admin_page/Employees';
+import OrdersPanel from './admin_page/OrdersPanel';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path='/orders' element={<Orders />} />
           <Route path='/tables' element={<Tables />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/employees' element={<Employees />} />
+          <Route path='/panel' element={<OrdersPanel />} />
         </Routes>
       }
     </div>

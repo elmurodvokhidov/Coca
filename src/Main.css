@@ -153,7 +153,7 @@ button {
     display: flex;
     align-items: center;
     border-radius: 50px;
-    border: 1px solid var(--neutral-30, #E4E4E4);
+    border: 1px solid #E4E4E4;
 }
 
 .admin_navbar_btns button {
@@ -2168,6 +2168,10 @@ button {
     background: linear-gradient(219deg, #FFAB18 0%, #FF2197 100%);
 }
 
+#active_link_sidebar {
+    background: linear-gradient(219deg, #FFAB18 0%, #FF2197 100%);
+}
+
 .dashboard_main_card {
     width: 100%;
     padding: 25px 25px 115px 40px;
@@ -2307,8 +2311,122 @@ button {
 }
 
 .dashboard_footer h1 {
-    color: var(--neutral-100, #19191C);
+    color: #19191C;
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 65px;
+}
+
+.employees_wrapper {
+    width: 95%;
+    height: 100vh;
+    padding: 24px 47px 34px 34px;
+}
+
+.employees_wrapper h1 {
+    color: #19191C;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 32px 0;
+}
+
+.employees_wrapper table {
+    width: 100%;
+}
+
+.employees_wrapper table {
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.employees_wrapper table th,
+.employees_wrapper table td {
+    border-bottom: 1px solid #E4E4E4;
+    padding: 10px 16px;
+}
+
+.employees_wrapper table th {
+    color: #9C9C9C;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.employees_wrapper table th:last-child {
+    text-align: left;
+    padding: 0 0 0 45px;
+}
+
+.employees_wrapper table td {
+    padding: 16px;
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.employees_wrapper table td:first-child span {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 120px;
+    background-color: #FFF5EE;
+    color: #FF5C00;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.employees_wrapper table td:nth-child(2) h3 {
+    color: #19191C;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.employees_wrapper table td:nth-child(2) h4 {
+    color: #828487;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.employees_wrapper table td:nth-child(4) span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 48px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.employees_table_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.employees_table_btns button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #FF5C00;
+    border-radius: 58px;
+    padding: 8px 20px;
+    color: #FF5C00;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.employees_table_btns span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.employees_table_btns button:last-child {
+    border: none;
+    color: #FFF;
+    background-color: #FF5C00;
 }
