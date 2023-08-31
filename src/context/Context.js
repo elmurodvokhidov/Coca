@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const ContextData = React.createContext();
 
@@ -320,85 +320,6 @@ function ContextFunction({ children }) {
         popup: false,
     });
 
-    // Admin state for navbar
-    const [adminState, setAdminState] = useState(
-        JSON.parse(localStorage.getItem('admin_state_for_navbar')) || localStorage.setItem('admin_state_for_navbar', false)
-    );
-
-    // Refresh function for admin state
-    function refresh_admin_state_fun() {
-        setAdminState(JSON.parse(localStorage.getItem('admin_state_for_navbar')))
-    };
-
-    // Employees data state
-    const [employees, setEmployees] = useState([
-        {
-            table_num: 'T-06',
-            full_name: 'Eshmatov Toshmat',
-            age: '28',
-            phone_num: '+998 99 111 44 56',
-            position: 'Menejer',
-            address: 'Namangan',
-        },
-        {
-            table_num: 'T-06',
-            full_name: 'Alakimov Alakim',
-            age: '30',
-            phone_num: '+998 99 886 20 66',
-            position: 'Ofitsiant',
-            address: 'Toshkent',
-        },
-        {
-            table_num: 'T-06',
-            full_name: 'Birnarsayev Birnarsa',
-            age: '25',
-            phone_num: '+998 99 001 56 11',
-            position: 'Hisobchi',
-            address: 'Samarqand',
-        },
-    ]);
-
-    // Active link to Admin siderbar state
-    const [activeSidebarLink, setActiveSidebarLink] = useState({
-        dashboard: false,
-        employees: false,
-        panel: false,
-    });
-
-    // The IDENTIFICATOR CONDITION that changes the value of 'admin state'
-    const location = useLocation();
-
-    // Access the pathname from the location object
-    const currentPath = location.pathname;
-
-    useEffect(() => {
-        if (currentPath === '/dashboard' || currentPath === '/employees' || currentPath === '/panel') {
-            localStorage.setItem('admin_state_for_navbar', true);
-            refresh_admin_state_fun();
-        }
-        else {
-            localStorage.setItem('admin_state_for_navbar', false);
-            refresh_admin_state_fun();
-        }
-
-        // switch (currentPath) {
-        //     case currentPath === "/dashboard":
-        //         setActiveSidebarLink({ ...activeSidebarLink, dashboard: true })
-        //         break;
-
-        //     case currentPath === "/employees":
-        //         setActiveSidebarLink({ ...activeSidebarLink, employees: true })
-        //         break;
-
-        //     case currentPath === "/panel":
-        //         setActiveSidebarLink({ ...activeSidebarLink, panel: true })
-        //         break;
-
-        //     default:
-        //         break;
-        // }
-    }, [currentPath, activeSidebarLink]);
-
     // Search function
     function searchFunction(e) {
         setSearch(e.target.value)
@@ -487,12 +408,6 @@ function ContextFunction({ children }) {
             setSearchTable,
             tableModalState,
             setTableModalState,
-            adminState,
-            setAdminState,
-            dashboardNav,
-            employees,
-            setEmployees,
-            activeSidebarLink,
         }}>
             {children}
         </ContextData.Provider>
